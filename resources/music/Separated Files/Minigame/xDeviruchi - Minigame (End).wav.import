@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4c2wt37j06c7"
+path="res://.godot/imported/xDeviruchi - Minigame (End).wav-dc4c3ef8f8f3334b0fb38e5508edfa8b.sample"
+
+[deps]
+
+source_file="res://resources/music/Separated Files/Minigame/xDeviruchi - Minigame (End).wav"
+dest_files=["res://.godot/imported/xDeviruchi - Minigame (End).wav-dc4c3ef8f8f3334b0fb38e5508edfa8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

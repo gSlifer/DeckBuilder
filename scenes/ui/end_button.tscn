@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqc3b8dyfhx4e"]
+
+[ext_resource type="Script" path="res://scenes/ui/end_button.gd" id="1_0xv52"]
+[ext_resource type="Texture2D" uid="uid://dbjxdhkt46rql" path="res://assets/characters/marcos/CrimsonFantasyGUI/EndTurn.png" id="2_lh7e8"]
+[ext_resource type="Script" path="res://scenes/ui/endArea.gd" id="3_2u20q"]
+[ext_resource type="FontFile" uid="uid://dyr4xh66jxnhy" path="res://assets/fonts/8-bit-hud.ttf" id="3_gdjqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slcje"]
+size = Vector2(129, 48)
+
+[node name="EndButton" type="Node2D"]
+script = ExtResource("1_0xv52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0.500001, 0)
+scale = Vector2(2.6875, 3)
+texture = ExtResource("2_lh7e8")
+
+[node name="endArea" type="Area2D" parent="."]
+script = ExtResource("3_2u20q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="endArea"]
+texture_filter = 3
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_slcje")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+offset_left = -51.0
+offset_top = -8.0
+offset_right = 53.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.917647, 0.788235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gdjqs")
+theme_override_font_sizes/font_size = 10
+text = "END TURN"
+horizontal_alignment = 1

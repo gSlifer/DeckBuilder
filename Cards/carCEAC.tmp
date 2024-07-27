@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3rttm21rt8tg"]
+
+[ext_resource type="Script" path="res://Cards/card_base.gd" id="1_2e713"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="2_a71fg"]
+
+[node name="CardBase" type="MarginContainer"]
+offset_right = 201.0
+offset_bottom = 259.0
+scale = Vector2(2, 2)
+script = ExtResource("1_2e713")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(100, 131)
+scale = Vector2(2, 2)
+
+[node name="Card" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="Barra" type="Sprite2D" parent="."]
+position = Vector2(100, 214)
+scale = Vector2(1.9, 2)
+
+[node name="Marco" type="Sprite2D" parent="."]
+position = Vector2(100, 105)
+scale = Vector2(2, 2)
+
+[node name="Point" type="Sprite2D" parent="."]
+position = Vector2(27, 30)
+scale = Vector2(2.2, 2.2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 172)
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.929412, 0.913725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("2_a71fg")
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="ImgCard" type="Sprite2D" parent="."]
+
+[node name="CardBack" type="Sprite2D" parent="."]
+position = Vector2(105, 132.25)
+scale = Vector2(2.11, 2.03462)

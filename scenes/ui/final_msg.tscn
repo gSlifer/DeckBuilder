@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd5k8sfgwnp24"]
+
+[ext_resource type="FontFile" uid="uid://dyr4xh66jxnhy" path="res://assets/fonts/8-bit-hud.ttf" id="1_hp43e"]
+[ext_resource type="Script" path="res://scenes/ui/final_msg.gd" id="1_xhrw1"]
+[ext_resource type="Texture2D" uid="uid://cnvtbbwxrl6yj" path="res://assets/UI/messages/victorybg.png" id="2_tngcj"]
+
+[node name="FinalMessage" type="Control"]
+z_index = 2
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhrw1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 3
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -92.0
+offset_right = 241.0
+offset_bottom = 88.0
+texture = ExtResource("2_tngcj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -52.0
+offset_right = 192.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.917647, 0.788235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.431373, 0.360784, 0.262745, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("1_hp43e")
+theme_override_font_sizes/font_size = 36
+text = "VICTORY"
+horizontal_alignment = 1

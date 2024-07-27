@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxfjl3poygjig"]
+
+[ext_resource type="Script" path="res://Cards/ArcherCards/ArrowRain.gd" id="1_5374s"]
+[ext_resource type="Texture2D" uid="uid://b3dysganbrgbc" path="res://assets/cartas/class/Archer/Background.png" id="2_rhpkl"]
+[ext_resource type="Texture2D" uid="uid://b041b2mh8dijx" path="res://assets/cartas/class/Archer/Sprites/ArrowRain.png" id="3_vxu8o"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="4_qpydg"]
+[ext_resource type="Texture2D" uid="uid://bkq3cev2uyg6u" path="res://assets/cartas/UncommonTitle.png" id="5_nr3if"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="6_nge5x"]
+[ext_resource type="Texture2D" uid="uid://de8namsmuaha6" path="res://assets/cartas/UncommonBarrita.png" id="7_jc5in"]
+[ext_resource type="Texture2D" uid="uid://dv13sadqsde8d" path="res://assets/cartas/UncommonPoint.png" id="8_4nqk2"]
+[ext_resource type="Texture2D" uid="uid://bsqjuecwoasr0" path="res://assets/cartas/class/Archer/Sprites/iconCommonAttackCard.png" id="9_55hf4"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/backcard/Back1.png" id="10_61t58"]
+[ext_resource type="Texture2D" uid="uid://uywshna02kl5" path="res://assets/cartas/UncommonStar.png" id="10_m8pgf"]
+[ext_resource type="PackedScene" uid="uid://davsn4pia7kfr" path="res://Cards/CardAnimation.tscn" id="11_sw0cu"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_af5d7"]
+points = PackedVector2Array(0, 0, 184, 0, 184, 2, 186, 2, 186, 4, 188, 4, 188, 6, 190, 6, 190, 10, 192, 10, 192, 244, 190, 244, 190, 246, 188, 246, 188, 248, 186, 248, 186, 250, 184, 250, 184, 252, 182, 252, 182, 254, 0, 254, 0, 252, -2, 252, -2, 250, -4, 250, -4, 248, -6, 248, -6, 246, -8, 246, -8, 6, -6, 6, -6, 4, -4, 4, -4, 2, -2, 2, -2, 0)
+
+[node name="Card" type="Node2D" groups=["view_card"]]
+script = ExtResource("1_5374s")
+
+[node name="OverCard" type="MarginContainer" parent="."]
+offset_right = 201.0
+offset_bottom = 259.0
+mouse_filter = 0
+
+[node name="cardImg" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_rhpkl")
+
+[node name="ImgCard" type="Sprite2D" parent="cardImg"]
+position = Vector2(-0.249998, -7.375)
+scale = Vector2(0.078, 0.073)
+texture = ExtResource("3_vxu8o")
+
+[node name="Marco" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(-0.0624962, -7.1875)
+scale = Vector2(1, 0.9)
+texture = ExtResource("4_qpydg")
+
+[node name="Title" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(4.5, -50.25)
+scale = Vector2(0.8125, 0.75)
+texture = ExtResource("5_nr3if")
+
+[node name="Title" type="Label" parent="cardImg/Title"]
+texture_filter = 3
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_direction = 2
+offset_left = -48.9231
+offset_top = -11.8333
+offset_right = 51.0769
+offset_bottom = 8.16667
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("6_nge5x")
+text = "Arrow rain"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Barra" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 3
+position = Vector2(0.249998, 42.5)
+scale = Vector2(0.890625, 1.13793)
+texture = ExtResource("7_jc5in")
+
+[node name="Description" type="Label" parent="cardImg"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+offset_left = -41.0
+offset_top = 27.0
+offset_right = 79.0
+offset_bottom = 80.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.866667, 0.929412, 0.913725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("6_nge5x")
+theme_override_font_sizes/font_size = 15
+text = "Inflicts 1 point of damage two times to all enemies."
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Point" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(-35.5, -50.5)
+texture = ExtResource("8_4nqk2")
+
+[node name="IconCard" type="Sprite2D" parent="cardImg"]
+texture_filter = 1
+position = Vector2(-36.562, -50.875)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_55hf4")
+
+[node name="Rarity" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(29, -39)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_m8pgf")
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(105, 132.25)
+scale = Vector2(2.11, 2.03462)
+texture = ExtResource("10_61t58")
+
+[node name="CardAnim" parent="." instance=ExtResource("11_sw0cu")]
+z_index = 10
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2(8, 4)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 184, 0, 184, 2, 186, 2, 186, 4, 188, 4, 188, 6, 190, 6, 190, 10, 192, 10, 192, 244, 190, 244, 190, 246, 188, 246, 188, 248, 186, 248, 186, 250, 184, 250, 184, 252, 182, 252, 182, 254, 0, 254, 0, 252, -2, 252, -2, 250, -4, 250, -4, 248, -6, 248, -6, 246, -8, 246, -8, 6, -6, 6, -6, 4, -4, 4, -4, 2, -2, 2, -2, 0)

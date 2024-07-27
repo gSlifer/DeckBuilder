@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://c47vr8n6vssih"]
+
+[ext_resource type="Script" path="res://playspace.gd" id="1_c7pri"]
+[ext_resource type="Texture2D" uid="uid://b63dv2iogmtba" path="res://assets/backgrounds/bg2.png" id="2_wooj3"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/backcard/Back1.png" id="3_qulij"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="4_p63eg"]
+[ext_resource type="Texture2D" uid="uid://cpowefcyujxj6" path="res://assets/cartas/backcard/Back2.png" id="6_ueaxc"]
+[ext_resource type="PackedScene" uid="uid://bd5k8sfgwnp24" path="res://scenes/ui/final_msg.tscn" id="6_yjtjv"]
+[ext_resource type="Script" path="res://DShow.gd" id="7_d3r0f"]
+[ext_resource type="FontFile" uid="uid://dyr4xh66jxnhy" path="res://assets/fonts/8-bit-hud.ttf" id="8_4br8w"]
+[ext_resource type="Script" path="res://scenes/reward1.gd" id="9_ndn0l"]
+[ext_resource type="Script" path="res://scenes/reward2.gd" id="10_5pa2h"]
+[ext_resource type="Script" path="res://scenes/reward3.gd" id="11_clqby"]
+
+[node name="Playspace" type="Node2D"]
+script = ExtResource("1_c7pri")
+
+[node name="Hand" type="Node" parent="."]
+
+[node name="Pile" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575.5, 324)
+scale = Vector2(0.899219, 0.738883)
+texture = ExtResource("2_wooj3")
+
+[node name="Deck" type="Node2D" parent="."]
+position = Vector2(0, 270)
+scale = Vector2(0.9, 0.9)
+
+[node name="DDraw" type="TextureButton" parent="Deck"]
+offset_right = 100.0
+offset_bottom = 130.0
+texture_normal = ExtResource("3_qulij")
+texture_pressed = ExtResource("3_qulij")
+texture_hover = ExtResource("3_qulij")
+texture_disabled = ExtResource("4_p63eg")
+
+[node name="Discard" type="Node2D" parent="."]
+position = Vector2(99, 263)
+
+[node name="DShow" type="TextureButton" parent="Discard"]
+z_index = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 98.0
+offset_bottom = 130.0
+texture_normal = ExtResource("6_ueaxc")
+texture_pressed = ExtResource("6_ueaxc")
+texture_hover = ExtResource("6_ueaxc")
+texture_disabled = ExtResource("4_p63eg")
+script = ExtResource("7_d3r0f")
+
+[node name="FinalMessage" parent="." instance=ExtResource("6_yjtjv")]
+offset_left = 568.0
+offset_top = 182.0
+offset_right = 568.0
+offset_bottom = 182.0
+
+[node name="CentreCardOval" type="Marker2D" parent="."]
+position = Vector2(604.8, 810.4)
+
+[node name="RadMark" type="Marker2D" parent="."]
+position = Vector2(518.4, 259.2)
+
+[node name="Pos1" type="Marker2D" parent="."]
+position = Vector2(260, 70)
+
+[node name="Dim" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = 218.0
+offset_top = -68.0
+offset_right = 938.0
+offset_bottom = 718.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="rw" type="Label" parent="."]
+visible = false
+self_modulate = Color(0.665823, 0.297469, 0.595651, 1)
+z_index = 1
+offset_left = 350.0
+offset_top = 60.0
+offset_right = 794.0
+offset_bottom = 210.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.961915, 0.892446, 0.778719, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_4br8w")
+theme_override_font_sizes/font_size = 30
+text = "REWARD!
+pick a card by 
+clicking on it
+"
+horizontal_alignment = 1
+
+[node name="r1" type="Marker2D" parent="."]
+position = Vector2(250, 280)
+
+[node name="r2" type="Marker2D" parent="."]
+position = Vector2(500, 280)
+
+[node name="r3" type="Marker2D" parent="."]
+position = Vector2(750, 280)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reward" type="Node" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+
+[node name="reward3" type="TextureButton" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 749.0
+offset_top = 280.0
+offset_right = 895.0
+offset_bottom = 468.0
+script = ExtResource("11_clqby")
+
+[node name="reward2" type="TextureButton" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 502.0
+offset_top = 281.0
+offset_right = 644.0
+offset_bottom = 466.0
+script = ExtResource("10_5pa2h")
+
+[node name="reward1" type="TextureButton" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 250.0
+offset_top = 280.0
+offset_right = 391.0
+offset_bottom = 467.0
+script = ExtResource("9_ndn0l")

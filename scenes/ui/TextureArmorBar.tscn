@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcy5xan8vtojn"]
+
+[ext_resource type="Texture2D" uid="uid://dmjcsqgvurq06" path="res://assets/characters/marcos/CrimsonFantasyGUI/Bars/ProgressArmorBar.png" id="1_y6ojl"]
+[ext_resource type="Texture2D" uid="uid://hjj53elyf5p2" path="res://assets/characters/marcos/CrimsonFantasyGUI/Bars/BGArmorBar.png" id="2_ln0nv"]
+[ext_resource type="Texture2D" uid="uid://bvqqbsa0c6ogq" path="res://assets/characters/marcos/CrimsonFantasyGUI/Bars/ArmorIcon.png" id="3_uw48k"]
+[ext_resource type="Script" path="res://scenes/ui/ArmorBar.gd" id="3_uyt65"]
+
+[node name="TextureArmorBar" type="TextureProgressBar"]
+z_index = 2
+texture_filter = 3
+offset_left = 14.0
+offset_right = 63.0
+offset_bottom = 16.0
+value = 20.0
+texture_under = ExtResource("2_ln0nv")
+texture_progress = ExtResource("1_y6ojl")
+script = ExtResource("3_uyt65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 7)
+texture = ExtResource("3_uw48k")
+metadata/_edit_lock_ = true

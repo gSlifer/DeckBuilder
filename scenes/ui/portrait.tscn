@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://chpub7rabf71x"]
+
+[ext_resource type="Script" path="res://scenes/ui/portrait.gd" id="1_742iq"]
+[ext_resource type="Texture2D" uid="uid://8abrp6gigpyd" path="res://assets/characters/marcos/CrimsonFantasyGUI/Portrait.png" id="1_oh2bu"]
+[ext_resource type="Texture2D" uid="uid://d3yyjgwg3jf0s" path="res://assets/characters/marcos/CrimsonFantasyGUI/NamePortrait.png" id="2_fpr4k"]
+[ext_resource type="Texture2D" uid="uid://holfkupq8ray" path="res://assets/characters/marcos/CrimsonFantasyGUI/Portrait2.png" id="2_iolsi"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="3_ayxck"]
+[ext_resource type="PackedScene" uid="uid://d0w1re8j7cdgm" path="res://scenes/ui/TextureHealthBar.tscn" id="3_ju6gl"]
+[ext_resource type="PackedScene" uid="uid://bcy5xan8vtojn" path="res://scenes/ui/TextureArmorBar.tscn" id="5_lew7c"]
+[ext_resource type="PackedScene" uid="uid://cfca2a64uqrvu" path="res://scenes/ui/next_label.tscn" id="8_msbic"]
+[ext_resource type="PackedScene" uid="uid://dqwp7x42lnr21" path="res://scenes/effects/effects.tscn" id="9_r015p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ho6cc"]
+texture = ExtResource("2_iolsi")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.0922934, 0.330564, 1, 0.580392)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hptw"]
+bg_color = Color(0.960784, 0.941176, 0.243137, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nksr2"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -100.0
+offset_top = -98.0
+offset_right = -60.0
+offset_bottom = -58.0
+script = ExtResource("1_742iq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 3
+custom_minimum_size = Vector2(200, 225)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 225.0
+texture = ExtResource("1_oh2bu")
+
+[node name="PlayingTexture" type="Panel" parent="."]
+visible = false
+texture_filter = 3
+custom_minimum_size = Vector2(200, 225)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ho6cc")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = 1
+texture_filter = 3
+layout_mode = 0
+offset_left = 50.0
+offset_right = 150.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hptw")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_fpr4k")
+
+[node name="Name" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ayxck")
+text = "Nameeee"
+label_settings = SubResource("LabelSettings_nksr2")
+horizontal_alignment = 1
+
+[node name="TextureHealthBar" parent="." instance=ExtResource("3_ju6gl")]
+z_index = 1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 147.0
+offset_right = 106.0
+offset_bottom = 164.0
+scale = Vector2(2.6, 2.581)
+
+[node name="TextureArmorBar" parent="." instance=ExtResource("5_lew7c")]
+z_index = 0
+layout_mode = 0
+offset_left = 69.0
+offset_top = 180.0
+offset_right = 118.0
+offset_bottom = 194.0
+scale = Vector2(2.22, 2)
+
+[node name="NextLabel" parent="." instance=ExtResource("8_msbic")]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 12.0
+offset_right = 191.0
+offset_bottom = 35.0
+
+[node name="AilmentTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 49.0
+offset_bottom = 53.0
+
+[node name="AilmentTime" type="Label" parent="AilmentTexture"]
+visible = false
+layout_mode = 0
+offset_left = 27.0
+offset_top = 18.0
+offset_right = 67.0
+offset_bottom = 41.0
+text = "0"
+
+[node name="Effects" parent="." instance=ExtResource("9_r015p")]
+z_index = 10
+position = Vector2(98, 87)

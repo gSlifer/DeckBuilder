@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://m0ybi4idx4tc"]
+
+[ext_resource type="Script" path="res://scenes/music/music.gd" id="1_sswsw"]
+[ext_resource type="AudioStream" uid="uid://c2iwck6uvsq41" path="res://resources/music/Separated Files/Title Theme/xDeviruchi - Title Theme (Loop).wav" id="2_qm2ie"]
+[ext_resource type="AudioStream" uid="uid://088ia8rko6xo" path="res://resources/music/Separated Files/Prepare for Battle!/xDeviruchi - Prepare for Battle! (Loop).wav" id="3_njbuv"]
+[ext_resource type="AudioStream" uid="uid://cxdxuaok02kue" path="res://resources/music/Separated Files/Decisive Battle/xDeviruchi - Decisive Battle (Loop).wav" id="4_wunk8"]
+[ext_resource type="AudioStream" uid="uid://cc3glices62th" path="res://resources/music/Separated Files/Decisive Battle/xDeviruchi - Decisive Battle (End).wav" id="5_4aqyh"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_sswsw")
+menu = ExtResource("2_qm2ie")
+battlemusic = ExtResource("3_njbuv")
+bossmusic = ExtResource("4_wunk8")
+endgameMusic = ExtResource("5_4aqyh")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+bus = &"Musica"

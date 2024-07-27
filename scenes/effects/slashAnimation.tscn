@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8ru8tnuw4es7"]
+
+[ext_resource type="Texture2D" uid="uid://bck7bb0s2jrox" path="res://assets/ParticleFX/Smear VFX 01/Smear 01 Horizontal 2.png" id="1_xbj6o"]
+[ext_resource type="Script" path="res://scenes/effects/slash_animation.gd" id="2_ai3y5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d07oe"]
+atlas = ExtResource("1_xbj6o")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmcql"]
+atlas = ExtResource("1_xbj6o")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k6br"]
+atlas = ExtResource("1_xbj6o")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6v2k"]
+atlas = ExtResource("1_xbj6o")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0poiv"]
+atlas = ExtResource("1_xbj6o")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bopaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d07oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmcql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k6br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6v2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0poiv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="SlashAnimation" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_bopaw")
+script = ExtResource("2_ai3y5")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8q25ce5dex55"
+path="res://.godot/imported/xDeviruchi - Take some rest and eat some food! (Loop).wav-cfe21b4d4ce95b077d0b62f28b14e2bc.sample"
+
+[deps]
+
+source_file="res://resources/music/Separated Files/Take some rest and eat some food!/xDeviruchi - Take some rest and eat some food! (Loop).wav"
+dest_files=["res://.godot/imported/xDeviruchi - Take some rest and eat some food! (Loop).wav-cfe21b4d4ce95b077d0b62f28b14e2bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

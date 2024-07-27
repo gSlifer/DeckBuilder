@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwxwm0qmdeup"]
+
+[ext_resource type="Script" path="res://playspace.gd" id="1_c7pri"]
+[ext_resource type="Texture2D" uid="uid://jl3wyay7clc6" path="res://assets/backgrounds/bg1.png" id="1_nkjfb"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/Back1.png" id="3_qulij"]
+[ext_resource type="Script" path="res://DDraw.gd" id="4_87rve"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="4_p63eg"]
+
+[node name="Playspace" type="Node2D"]
+script = ExtResource("1_c7pri")
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(750, 509)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_nkjfb")
+
+[node name="Deck" type="Node2D" parent="."]
+position = Vector2(0, 270)
+scale = Vector2(0.9, 0.9)
+
+[node name="DDraw" type="TextureButton" parent="Deck"]
+offset_right = 100.0
+offset_bottom = 130.0
+texture_normal = ExtResource("3_qulij")
+texture_pressed = ExtResource("3_qulij")
+texture_hover = ExtResource("3_qulij")
+texture_disabled = ExtResource("4_p63eg")
+script = ExtResource("4_87rve")

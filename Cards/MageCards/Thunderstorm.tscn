@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw374adu6f1vd"]
+
+[ext_resource type="Script" path="res://Cards/MageCards/ThunderStorm.gd" id="1_fpnm0"]
+[ext_resource type="Texture2D" uid="uid://1fpnj6d7aw37" path="res://assets/cartas/class/Mage/Background.png" id="2_a7h3x"]
+[ext_resource type="Texture2D" uid="uid://o4nsud8w40sr" path="res://assets/cartas/class/Mage/Sprites/ThunderStorm.png" id="3_fgrii"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="4_kn1l4"]
+[ext_resource type="Texture2D" uid="uid://bkq3cev2uyg6u" path="res://assets/cartas/UncommonTitle.png" id="5_td120"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="6_np7di"]
+[ext_resource type="Texture2D" uid="uid://de8namsmuaha6" path="res://assets/cartas/UncommonBarrita.png" id="7_jxcxv"]
+[ext_resource type="Texture2D" uid="uid://uywshna02kl5" path="res://assets/cartas/UncommonStar.png" id="8_mag18"]
+[ext_resource type="Texture2D" uid="uid://dv13sadqsde8d" path="res://assets/cartas/UncommonPoint.png" id="9_3vmj0"]
+[ext_resource type="Texture2D" uid="uid://bjueyfmp8pqqg" path="res://assets/cartas/class/Mage/Sprites/iconCommonAttackCard.png" id="9_hvpep"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/backcard/Back1.png" id="10_fr5sr"]
+[ext_resource type="PackedScene" uid="uid://1al8jmltf5h4" path="res://Cards/CardAnimation.tscn" id="11_tug6m"]
+
+[node name="Card" type="Node2D" groups=["view_card"]]
+script = ExtResource("1_fpnm0")
+
+[node name="OverCard" type="MarginContainer" parent="."]
+offset_right = 201.0
+offset_bottom = 259.0
+mouse_filter = 0
+
+[node name="cardImg" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.666667, 0.835294, 1)
+texture_filter = 1
+texture = ExtResource("2_a7h3x")
+
+[node name="ImgCard" type="Sprite2D" parent="cardImg"]
+position = Vector2(-0.25, -7.25)
+scale = Vector2(0.069, 0.064)
+texture = ExtResource("3_fgrii")
+
+[node name="Marco" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(-0.0624962, -7.1875)
+scale = Vector2(1, 0.9)
+texture = ExtResource("4_kn1l4")
+
+[node name="Title" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(4.5, -50.25)
+scale = Vector2(0.8125, 0.75)
+texture = ExtResource("5_td120")
+
+[node name="Title" type="Label" parent="cardImg/Title"]
+texture_filter = 1
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -42.4615
+offset_top = -20.6667
+offset_right = 47.5385
+offset_bottom = -0.666668
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_np7di")
+theme_override_font_sizes/font_size = 14
+text = "Thunderstorm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Barra" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 3
+position = Vector2(0.249998, 42.5)
+scale = Vector2(0.890625, 1.13793)
+texture = ExtResource("7_jxcxv")
+
+[node name="Description" type="Label" parent="cardImg"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+offset_left = -42.0
+offset_top = 27.0
+offset_right = 78.0
+offset_bottom = 76.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.866667, 0.929412, 0.913725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("6_np7di")
+theme_override_font_sizes/font_size = 12
+text = "A thunderstorm strikes the area, dealing 2 points of damage to each enemy."
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 136
+metadata/_edit_use_anchors_ = true
+
+[node name="Rarity" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(29, -39)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_mag18")
+
+[node name="Point" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(-36.5, -50.5)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("9_3vmj0")
+
+[node name="IconCard" type="Sprite2D" parent="cardImg"]
+texture_filter = 1
+position = Vector2(-35, -52)
+scale = Vector2(0.8, 0.703)
+texture = ExtResource("9_hvpep")
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(105, 132.25)
+scale = Vector2(2.11, 2.03462)
+texture = ExtResource("10_fr5sr")
+
+[node name="CardAnim" parent="." instance=ExtResource("11_tug6m")]
+z_index = 10
+position = Vector2(5, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2(8, 4)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 184, 0, 184, 2, 186, 2, 186, 4, 188, 4, 188, 6, 190, 6, 190, 10, 192, 10, 192, 244, 190, 244, 190, 246, 188, 246, 188, 248, 186, 248, 186, 250, 184, 250, 184, 252, 182, 252, 182, 254, 0, 254, 0, 252, -2, 252, -2, 250, -4, 250, -4, 248, -6, 248, -6, 246, -8, 246, -8, 6, -6, 6, -6, 4, -4, 4, -4, 2, -2, 2, -2, 0)

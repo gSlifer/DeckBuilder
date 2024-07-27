@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr3vi06km7sgw"]
+
+[ext_resource type="Script" path="res://scenes/units/characters/healer.gd" id="1_r2ubh"]
+[ext_resource type="PackedScene" uid="uid://chpub7rabf71x" path="res://scenes/ui/portrait.tscn" id="2_j171a"]
+[ext_resource type="Texture2D" uid="uid://c3trum1b32vk6" path="res://assets/characters/marcos/healer_m.png" id="2_kvjgf"]
+[ext_resource type="PackedScene" uid="uid://dqmxy4x1jpqgv" path="res://scenes/ui/SelectAnimation.tscn" id="4_qf7ko"]
+[ext_resource type="PackedScene" uid="uid://dfsl17ktuvfe4" path="res://scenes/effects/healAnimation.tscn" id="5_425q3"]
+
+[node name="Healer" type="Node2D"]
+script = ExtResource("1_r2ubh")
+
+[node name="Control" parent="." instance=ExtResource("2_j171a")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_kvjgf")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SelectAnimation" parent="." instance=ExtResource("4_qf7ko")]
+position = Vector2(1, 14)
+
+[node name="HealAnimation" parent="." instance=ExtResource("5_425q3")]
+visible = false
+scale = Vector2(1.25, 1.25)

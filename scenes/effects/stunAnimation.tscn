@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cr7101spxkgty"]
+
+[ext_resource type="Texture2D" uid="uid://df2mvdatwfw32" path="res://assets/ParticleFX/Hit Effect 01/Hit Effect 01 1.png" id="1_byx1x"]
+[ext_resource type="Script" path="res://scenes/effects/stun_animation.gd" id="2_7glyu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cep3r"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5ibk"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tujnu"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xcru"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iswce"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw060"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srt1v"]
+atlas = ExtResource("1_byx1x")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jp00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cep3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5ibk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tujnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xcru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iswce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw060")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srt1v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="StunAnimation" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_3jp00")
+frame = 6
+frame_progress = 1.0
+speed_scale = 1.5
+script = ExtResource("2_7glyu")

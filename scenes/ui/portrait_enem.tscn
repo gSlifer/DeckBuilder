@@ -1,0 +1,135 @@
+[gd_scene load_steps=17 format=3 uid="uid://kb7o8ptiuwqv"]
+
+[ext_resource type="Script" path="res://scenes/ui/portrait.gd" id="1_2bu0y"]
+[ext_resource type="Texture2D" uid="uid://holfkupq8ray" path="res://assets/characters/marcos/CrimsonFantasyGUI/Portrait2.png" id="3_bythj"]
+[ext_resource type="Texture2D" uid="uid://d3yyjgwg3jf0s" path="res://assets/characters/marcos/CrimsonFantasyGUI/NamePortrait.png" id="4_xtu31"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="5_1vqnm"]
+[ext_resource type="PackedScene" uid="uid://d0w1re8j7cdgm" path="res://scenes/ui/TextureHealthBar.tscn" id="6_1027r"]
+[ext_resource type="PackedScene" uid="uid://bcy5xan8vtojn" path="res://scenes/ui/TextureArmorBar.tscn" id="7_1mp56"]
+[ext_resource type="PackedScene" uid="uid://ccfawvjnfv1oh" path="res://scenes/ui/enemies/EnemyHP.tscn" id="8_fos3d"]
+[ext_resource type="PackedScene" uid="uid://cfca2a64uqrvu" path="res://scenes/ui/next_label.tscn" id="8_rju6t"]
+[ext_resource type="Script" path="res://scenes/ui/enemies/EnemyHP.gd" id="9_0upun"]
+[ext_resource type="PackedScene" uid="uid://b7se127tupw1x" path="res://scenes/ui/enemies/EnemyArmor.tscn" id="10_kabso"]
+[ext_resource type="Script" path="res://scenes/ui/enemies/EnemyArmor.gd" id="11_u3dl1"]
+[ext_resource type="PackedScene" uid="uid://dqwp7x42lnr21" path="res://scenes/effects/effects.tscn" id="12_0ft3e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ho6cc"]
+texture = ExtResource("3_bythj")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.0922934, 0.330564, 1, 0.580392)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hptw"]
+bg_color = Color(0.960784, 0.941176, 0.243137, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nksr2"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k43f2"]
+font_color = Color(0, 0, 1, 1)
+outline_size = 5
+outline_color = Color(1, 1, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2bu0y")
+
+[node name="PlayingTexture" type="Panel" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0)
+texture_filter = 3
+custom_minimum_size = Vector2(200, 225)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ho6cc")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+z_index = 1
+texture_filter = 3
+layout_mode = 0
+offset_left = 50.0
+offset_right = 150.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hptw")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("4_xtu31")
+
+[node name="Name" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1vqnm")
+text = "Enemy"
+label_settings = SubResource("LabelSettings_nksr2")
+horizontal_alignment = 1
+
+[node name="TextureHealthBar" parent="." instance=ExtResource("6_1027r")]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 147.0
+offset_right = 106.0
+offset_bottom = 164.0
+scale = Vector2(2.6, 2.581)
+
+[node name="TextureArmorBar" parent="." instance=ExtResource("7_1mp56")]
+visible = false
+z_index = 0
+layout_mode = 0
+offset_left = 69.0
+offset_top = 180.0
+offset_right = 118.0
+offset_bottom = 194.0
+scale = Vector2(2.22, 2)
+
+[node name="NextLabel" parent="." instance=ExtResource("8_rju6t")]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -24.0
+offset_right = 65.0
+offset_bottom = -1.0
+
+[node name="AilmentTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_right = -5.0
+offset_bottom = 40.0
+
+[node name="AilmentTime" type="Label" parent="AilmentTexture"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 65.0
+offset_bottom = 37.0
+text = "0"
+label_settings = SubResource("LabelSettings_k43f2")
+
+[node name="HP" parent="." instance=ExtResource("8_fos3d")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_0upun")
+
+[node name="ARMOR" parent="." instance=ExtResource("10_kabso")]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 0.0
+offset_right = 85.0
+offset_bottom = 40.0
+script = ExtResource("11_u3dl1")
+
+[node name="Effects" parent="." instance=ExtResource("12_0ft3e")]
+z_index = 10
+position = Vector2(45, 60)

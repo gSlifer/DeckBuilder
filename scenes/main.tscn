@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5hufqs7sbm01"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
+[ext_resource type="PackedScene" uid="uid://00d2ier4f5h3" path="res://scenes/units/characters/warrior.tscn" id="2_k16tf"]
+[ext_resource type="PackedScene" uid="uid://dmu30pt1g1sjm" path="res://scenes/units/characters/wizard.tscn" id="3_pa31t"]
+[ext_resource type="PackedScene" uid="uid://b576aujfukikk" path="res://scenes/units/characters/archer.tscn" id="4_711bj"]
+[ext_resource type="PackedScene" uid="uid://cr3vi06km7sgw" path="res://scenes/units/characters/healer.tscn" id="5_452qf"]
+[ext_resource type="PackedScene" uid="uid://dqohr5ujwkyt0" path="res://scenes/units/teams/Teams.tscn" id="7_pggwx"]
+[ext_resource type="PackedScene" uid="uid://c47vr8n6vssih" path="res://scenes/playspace.tscn" id="8_l73yt"]
+[ext_resource type="PackedScene" uid="uid://bqc3b8dyfhx4e" path="res://scenes/ui/end_button.tscn" id="9_bnhsd"]
+[ext_resource type="PackedScene" uid="uid://dcxpd60c1fghu" path="res://scenes/OptionsMenu.tscn" id="9_mdvv1"]
+[ext_resource type="Script" path="res://scenes/Handler.gd" id="10_bs8co"]
+[ext_resource type="PackedScene" uid="uid://brpn0fn2j7hst" path="res://scenes/HTP.tscn" id="11_q6onk"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ysfbh")
+warrior = ExtResource("2_k16tf")
+mage = ExtResource("3_pa31t")
+archer = ExtResource("4_711bj")
+healer = ExtResource("5_452qf")
+
+[node name="Playspace" parent="." instance=ExtResource("8_l73yt")]
+position = Vector2(0, -25)
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Teams" parent="." instance=ExtResource("7_pggwx")]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="PartyPoints" type="Node" parent="SpawnPoints"]
+
+[node name="UpperLeft" type="Marker2D" parent="SpawnPoints/PartyPoints"]
+position = Vector2(112, 105)
+
+[node name="UpperRight" type="Marker2D" parent="SpawnPoints/PartyPoints"]
+position = Vector2(1035, 110)
+
+[node name="LowerLeft" type="Marker2D" parent="SpawnPoints/PartyPoints"]
+position = Vector2(112, 515)
+
+[node name="LowerRight" type="Marker2D" parent="SpawnPoints/PartyPoints"]
+position = Vector2(1035, 515)
+
+[node name="EnemyPoints" type="Node" parent="SpawnPoints"]
+
+[node name="LeftCenter" type="Marker2D" parent="SpawnPoints/EnemyPoints"]
+position = Vector2(375, 430)
+
+[node name="LeftCenter2" type="Marker2D" parent="SpawnPoints/EnemyPoints"]
+position = Vector2(456, 394)
+
+[node name="Center" type="Marker2D" parent="SpawnPoints/EnemyPoints"]
+position = Vector2(551, 369)
+
+[node name="RightCenter2" type="Marker2D" parent="SpawnPoints/EnemyPoints"]
+position = Vector2(636, 394)
+
+[node name="RightCenter" type="Marker2D" parent="SpawnPoints/EnemyPoints"]
+position = Vector2(733, 430)
+
+[node name="EndButton" parent="." instance=ExtResource("9_bnhsd")]
+position = Vector2(1084, 328)
+
+[node name="Handler" type="Node2D" parent="."]
+script = ExtResource("10_bs8co")
+
+[node name="Win" type="Node2D" parent="."]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Canvas"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsMenu" parent="Canvas/Control" instance=ExtResource("9_mdvv1")]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 455.0
+offset_top = 193.0
+offset_right = 695.0
+offset_bottom = 337.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Htp" parent="Canvas/Control" instance=ExtResource("11_q6onk")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 8.0
+offset_right = 1035.0
+offset_bottom = 621.0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6cfq0qe7ynw6"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_fmbhi"]
+[ext_resource type="Script" path="res://scripts/player_data_resource.gd" id="2_xaonh"]
+
+[sub_resource type="Resource" id="Resource_nviqh"]
+script = ExtResource("2_xaonh")
+name = "server"
+role = 2
+
+[sub_resource type="Resource" id="Resource_ckjww"]
+script = ExtResource("2_xaonh")
+name = "client1"
+role = 1
+
+[sub_resource type="Resource" id="Resource_xgosv"]
+script = ExtResource("2_xaonh")
+name = "client2"
+role = 3
+
+[sub_resource type="Resource" id="Resource_s3q71"]
+script = ExtResource("2_xaonh")
+name = "client3"
+role = 4
+
+[node name="Game" type="Node"]
+script = ExtResource("1_fmbhi")
+test_players = Array[ExtResource("2_xaonh")]([SubResource("Resource_nviqh"), SubResource("Resource_ckjww"), SubResource("Resource_xgosv"), SubResource("Resource_s3q71")])

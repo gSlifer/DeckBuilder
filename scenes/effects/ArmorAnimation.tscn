@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://tofqpwij0v3x"]
+
+[ext_resource type="Texture2D" uid="uid://b281gjlyxe8gs" path="res://assets/ParticleFX/armorAnimation.png" id="1_3gy78"]
+[ext_resource type="Script" path="res://scenes/effects/ShieldAnimation.gd" id="2_y2381"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf0h3"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7vkf"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh3xi"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baimk"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji27j"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(0, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvgog"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(144, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5trnf"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(288, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wcox"]
+atlas = ExtResource("1_3gy78")
+region = Rect2(432, 144, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvyqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf0h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7vkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh3xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji27j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvgog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5trnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wcox")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ArmorAnimation" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+modulate = Color(0, 0.713726, 1, 1)
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_nvyqn")
+script = ExtResource("2_y2381")

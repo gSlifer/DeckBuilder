@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3esfmgpv70fl"]
+
+[ext_resource type="Script" path="res://scenes/units/enemies/boss.gd" id="1_wbwof"]
+[ext_resource type="PackedScene" uid="uid://kb7o8ptiuwqv" path="res://scenes/ui/portrait_enem.tscn" id="2_8vh4i"]
+[ext_resource type="Texture2D" uid="uid://kra0hdamw5p2" path="res://assets/enemies/Icon21.png" id="3_174ur"]
+[ext_resource type="PackedScene" uid="uid://dqmxy4x1jpqgv" path="res://scenes/ui/SelectAnimation.tscn" id="4_s0o77"]
+
+[node name="Boss" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wbwof")
+
+[node name="Control" parent="." instance=ExtResource("2_8vh4i")]
+offset_left = -42.0
+offset_top = -93.0
+offset_right = -42.0
+offset_bottom = -93.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2.5, -0.999999)
+scale = Vector2(3.59375, 3.5)
+texture = ExtResource("3_174ur")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SelectAnimation" parent="." instance=ExtResource("4_s0o77")]
+position = Vector2(2, 1)
+scale = Vector2(3, 3.429)

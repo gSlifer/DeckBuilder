@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3i5ssyarrwse"
+path="res://.godot/imported/xDeviruchi - Exploring The Unknown (Intro).wav-3b8b4fa6864ba1355001de87eaf6d423.sample"
+
+[deps]
+
+source_file="res://resources/music/Separated Files/Exploring The Unknown/xDeviruchi - Exploring The Unknown (Intro).wav"
+dest_files=["res://.godot/imported/xDeviruchi - Exploring The Unknown (Intro).wav-3b8b4fa6864ba1355001de87eaf6d423.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

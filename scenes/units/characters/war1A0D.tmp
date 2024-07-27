@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://00d2ier4f5h3"]
+
+[ext_resource type="Script" path="res://scenes/units/characters/warrior.gd" id="1_o7eng"]
+[ext_resource type="Texture2D" uid="uid://b2h7hljb7xl2u" path="res://assets/characters/marcos/warrior_m.png" id="2_1j6fs"]
+[ext_resource type="PackedScene" uid="uid://chpub7rabf71x" path="res://scenes/ui/portrait.tscn" id="3_h7m4a"]
+[ext_resource type="PackedScene" uid="uid://dqmxy4x1jpqgv" path="res://scenes/ui/SelectAnimation.tscn" id="4_6ol1t"]
+
+[node name="Warrior" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_o7eng")
+
+[node name="Control" parent="." instance=ExtResource("3_h7m4a")]
+offset_left = -97.0
+offset_right = -57.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -4)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_1j6fs")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SelectAnimation" parent="." instance=ExtResource("4_6ol1t")]
+position = Vector2(4, 15)

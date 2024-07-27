@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqwp7x42lnr21"]
+
+[ext_resource type="Script" path="res://scenes/effects/effects.gd" id="1_fpki2"]
+[ext_resource type="PackedScene" uid="uid://bbbbi712nyqsa" path="res://scenes/effects/boltAnimation.tscn" id="1_xrkrn"]
+[ext_resource type="PackedScene" uid="uid://cfng0o1ey78vx" path="res://scenes/effects/ArrowRainAnimation.tscn" id="2_anln5"]
+[ext_resource type="PackedScene" uid="uid://8wx55mvug474" path="res://scenes/effects/burnAnimation.tscn" id="3_iq5vd"]
+[ext_resource type="PackedScene" uid="uid://dfsl17ktuvfe4" path="res://scenes/effects/healAnimation.tscn" id="4_e7p2e"]
+[ext_resource type="PackedScene" uid="uid://cr7101spxkgty" path="res://scenes/effects/stunAnimation.tscn" id="5_84540"]
+[ext_resource type="PackedScene" uid="uid://cdmnuqciqhlkt" path="res://scenes/effects/weakAnimation.tscn" id="6_isq22"]
+[ext_resource type="PackedScene" uid="uid://b8ru8tnuw4es7" path="res://scenes/effects/slashAnimation.tscn" id="8_g75qy"]
+[ext_resource type="PackedScene" uid="uid://ucjcwq5rouy" path="res://scenes/effects/deadAnimation.tscn" id="9_1a6wj"]
+[ext_resource type="PackedScene" uid="uid://tofqpwij0v3x" path="res://scenes/effects/ArmorAnimation.tscn" id="10_rdmmc"]
+
+[node name="Effects" type="Node2D"]
+position = Vector2(49, 44)
+script = ExtResource("1_fpki2")
+
+[node name="BoltAnimation" parent="." instance=ExtResource("1_xrkrn")]
+visible = false
+position = Vector2(-4, 15)
+scale = Vector2(1.4, 1.4)
+
+[node name="ArrowRainAnimation" parent="." instance=ExtResource("2_anln5")]
+visible = false
+position = Vector2(0, 16)
+
+[node name="BurnAnimation" parent="." instance=ExtResource("3_iq5vd")]
+visible = false
+position = Vector2(-1, -33)
+scale = Vector2(2, 2)
+
+[node name="HealAnimation" parent="." instance=ExtResource("4_e7p2e")]
+visible = false
+position = Vector2(20, 6)
+
+[node name="StunAnimation" parent="." instance=ExtResource("5_84540")]
+visible = false
+position = Vector2(-11, 17)
+scale = Vector2(3, 3)
+
+[node name="WeakAnimation" parent="." instance=ExtResource("6_isq22")]
+visible = false
+scale = Vector2(1.4, 1.4)
+
+[node name="SlashAnimation" parent="." instance=ExtResource("8_g75qy")]
+visible = false
+position = Vector2(-31, 19)
+scale = Vector2(4, 4)
+
+[node name="DeadAnimation" parent="." instance=ExtResource("9_1a6wj")]
+visible = false
+position = Vector2(-48, -60)
+scale = Vector2(1.6, 1.6)
+
+[node name="ShieldAnimation" parent="." instance=ExtResource("10_rdmmc")]
+visible = false
+position = Vector2(-1, -24)
+scale = Vector2(0.8, 0.8)

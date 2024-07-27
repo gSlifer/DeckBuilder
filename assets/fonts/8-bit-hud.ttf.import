@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dyr4xh66jxnhy"
+path="res://.godot/imported/8-bit-hud.ttf-8f88f007a4e5d1ff37c9efd43560f87b.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/8-bit-hud.ttf"
+dest_files=["res://.godot/imported/8-bit-hud.ttf-8f88f007a4e5d1ff37c9efd43560f87b.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=2
+generate_mipmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=3
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

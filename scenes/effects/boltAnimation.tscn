@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbbbi712nyqsa"]
+
+[ext_resource type="Texture2D" uid="uid://ux0cqin0aj83" path="res://assets/ParticleFX/Spritesheets/Eletric A-Sheet.png" id="1_nn8c0"]
+[ext_resource type="Script" path="res://scenes/effects/bolt_animation.gd" id="2_fc4jx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1qwf"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yc3e"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwvjb"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7g2e"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsdrx"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffvlu"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnyex"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nnj3"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k33pc"]
+atlas = ExtResource("1_nn8c0")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75u6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1qwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yc3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwvjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7g2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsdrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffvlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnyex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nnj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k33pc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="BoltAnimation" type="Node2D"]
+position = Vector2(0, -1)
+scale = Vector2(1.2, 1.2)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_75u6u")
+script = ExtResource("2_fc4jx")

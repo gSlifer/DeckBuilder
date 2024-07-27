@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqmxy4x1jpqgv"]
+
+[ext_resource type="Texture2D" uid="uid://dx7so8cbac2ge" path="res://assets/UI/Select1.1.png" id="1_njo18"]
+[ext_resource type="Texture2D" uid="uid://biu1m7djlne7d" path="res://assets/UI/Select2.png" id="2_b8kcj"]
+[ext_resource type="Texture2D" uid="uid://dkjcaattkcen" path="res://assets/UI/Select3.1.png" id="3_ftj5t"]
+[ext_resource type="Texture2D" uid="uid://b3jw0f1mvqg55" path="res://assets/UI/Select4.1.png" id="4_7orno"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tb7hg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_njo18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b8kcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ftj5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7orno")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SelectAnimation" type="Node2D"]
+visible = false
+scale = Vector2(7, 8)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tb7hg")
+frame_progress = 0.264229

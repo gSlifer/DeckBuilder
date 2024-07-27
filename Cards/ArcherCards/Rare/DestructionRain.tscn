@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=3 uid="uid://blk1x24f7orsu"]
+
+[ext_resource type="Script" path="res://Cards/ArcherCards/Rare/DestructionRain.gd" id="1_tw0e6"]
+[ext_resource type="Texture2D" uid="uid://b3dysganbrgbc" path="res://assets/cartas/class/Archer/Background.png" id="2_50e5g"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="3_4pxx1"]
+[ext_resource type="Texture2D" uid="uid://cpk4eg1ukb3c5" path="res://assets/cartas/class/Archer/Sprites/Destruction Rain.png" id="3_qe5mj"]
+[ext_resource type="Texture2D" uid="uid://bkq3cev2uyg6u" path="res://assets/cartas/UncommonTitle.png" id="4_r06mc"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="5_kba61"]
+[ext_resource type="Texture2D" uid="uid://de8namsmuaha6" path="res://assets/cartas/UncommonBarrita.png" id="6_3lqfs"]
+[ext_resource type="Texture2D" uid="uid://dv13sadqsde8d" path="res://assets/cartas/UncommonPoint.png" id="7_3awr3"]
+[ext_resource type="Texture2D" uid="uid://bsqjuecwoasr0" path="res://assets/cartas/class/Archer/Sprites/iconCommonAttackCard.png" id="8_4s83f"]
+[ext_resource type="Texture2D" uid="uid://uywshna02kl5" path="res://assets/cartas/UncommonStar.png" id="9_njvk6"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/backcard/Back1.png" id="10_kcexp"]
+[ext_resource type="PackedScene" uid="uid://1al8jmltf5h4" path="res://Cards/CardAnimation.tscn" id="11_l6whe"]
+
+[node name="RainofDestruction" type="Node2D" groups=["view_card"]]
+script = ExtResource("1_tw0e6")
+
+[node name="OverCard" type="MarginContainer" parent="."]
+offset_right = 201.0
+offset_bottom = 259.0
+mouse_filter = 0
+
+[node name="cardImg" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_50e5g")
+
+[node name="ImgCard" type="Sprite2D" parent="cardImg"]
+position = Vector2(-0.249998, -7.375)
+scale = Vector2(0.068, 0.063)
+texture = ExtResource("3_qe5mj")
+
+[node name="Marco" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(-0.0624962, -7.1875)
+scale = Vector2(1, 0.9)
+texture = ExtResource("3_4pxx1")
+
+[node name="Title" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(4.5, -50.25)
+scale = Vector2(0.8125, 0.75)
+texture = ExtResource("4_r06mc")
+
+[node name="Title" type="Label" parent="cardImg/Title"]
+texture_filter = 3
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_direction = 2
+offset_left = -46.1538
+offset_top = -11.6667
+offset_right = 53.8462
+offset_bottom = 8.33334
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("5_kba61")
+theme_override_font_sizes/font_size = 12
+text = "Destruction Rain"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Barra" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 3
+position = Vector2(0.249998, 42.5)
+scale = Vector2(0.890625, 1.13793)
+texture = ExtResource("6_3lqfs")
+
+[node name="Description" type="Label" parent="cardImg"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+offset_left = -41.0
+offset_top = 24.0
+offset_right = 79.0
+offset_bottom = 77.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.866667, 0.929412, 0.913725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("5_kba61")
+theme_override_font_sizes/font_size = 15
+text = "The enemies are WEAK and take 3(2+1) points of damage"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Point" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(-35.5, -50.5)
+texture = ExtResource("7_3awr3")
+
+[node name="IconCard" type="Sprite2D" parent="cardImg"]
+texture_filter = 1
+position = Vector2(-36.562, -50.875)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_4s83f")
+
+[node name="Rarity" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.470588, 0.694118, 0.878431, 1)
+texture_filter = 1
+position = Vector2(29, -39)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_njvk6")
+
+[node name="Rarity" type="Sprite2D" parent="cardImg/Rarity"]
+texture_filter = 1
+position = Vector2(-18.3333, 0)
+texture = ExtResource("9_njvk6")
+
+[node name="Rarity2" type="Sprite2D" parent="cardImg/Rarity"]
+texture_filter = 1
+position = Vector2(-36.6667, 0)
+texture = ExtResource("9_njvk6")
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(105, 132.25)
+scale = Vector2(2.11, 2.03462)
+texture = ExtResource("10_kcexp")
+
+[node name="CardAnim" parent="." instance=ExtResource("11_l6whe")]
+z_index = 10
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2(8, 4)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 184, 0, 184, 2, 186, 2, 186, 4, 188, 4, 188, 6, 190, 6, 190, 10, 192, 10, 192, 244, 190, 244, 190, 246, 188, 246, 188, 248, 186, 248, 186, 250, 184, 250, 184, 252, 182, 252, 182, 254, 0, 254, 0, 252, -2, 252, -2, 250, -4, 250, -4, 248, -6, 248, -6, 246, -8, 246, -8, 6, -6, 6, -6, 4, -4, 4, -4, 2, -2, 2, -2, 0)

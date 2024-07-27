@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://buar4k2q6ofg8"]
+
+[ext_resource type="Texture2D" uid="uid://1fpnj6d7aw37" path="res://assets/cartas/class/Mage/Background.png" id="1_2ksqn"]
+[ext_resource type="Script" path="res://Cards/MageCards/Uncommon/IceKnife.gd" id="1_ui3mj"]
+[ext_resource type="Texture2D" uid="uid://tkfmspf26exm" path="res://assets/cartas/UncommonMarco.png" id="2_3rtil"]
+[ext_resource type="Texture2D" uid="uid://dvj10iqjvekl5" path="res://assets/cartas/class/Mage/Sprites/ice Knife.png" id="3_gpt36"]
+[ext_resource type="Texture2D" uid="uid://bkq3cev2uyg6u" path="res://assets/cartas/UncommonTitle.png" id="3_uwuv0"]
+[ext_resource type="FontFile" uid="uid://dqsx22i3omrbh" path="res://assets/fonts/REDENSEK.TTF" id="4_mx0y7"]
+[ext_resource type="Texture2D" uid="uid://de8namsmuaha6" path="res://assets/cartas/UncommonBarrita.png" id="5_nkqxl"]
+[ext_resource type="Texture2D" uid="uid://dv13sadqsde8d" path="res://assets/cartas/UncommonPoint.png" id="6_1xdpo"]
+[ext_resource type="Texture2D" uid="uid://dnellmbaku0iy" path="res://assets/cartas/class/Mage/Sprites/iconUncommonCardAttack.png" id="7_krgja"]
+[ext_resource type="Texture2D" uid="uid://uywshna02kl5" path="res://assets/cartas/UncommonStar.png" id="7_x0a62"]
+[ext_resource type="Texture2D" uid="uid://dvvjohgnfci5b" path="res://assets/cartas/backcard/Back1.png" id="8_50qwn"]
+[ext_resource type="PackedScene" uid="uid://1al8jmltf5h4" path="res://Cards/CardAnimation.tscn" id="9_csey1"]
+
+[node name="IceKnife" type="Node2D" groups=["view_card"]]
+script = ExtResource("1_ui3mj")
+
+[node name="OverCard" type="MarginContainer" parent="."]
+offset_right = 201.0
+offset_bottom = 259.0
+mouse_filter = 0
+
+[node name="cardImg" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.666667, 0.835294, 1)
+texture_filter = 1
+texture = ExtResource("1_2ksqn")
+
+[node name="ImgCard" type="Sprite2D" parent="cardImg"]
+position = Vector2(-0.25, -7)
+scale = Vector2(0.069, 0.065)
+texture = ExtResource("3_gpt36")
+
+[node name="Marco" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(-0.0624962, -7.1875)
+scale = Vector2(1, 0.9)
+texture = ExtResource("2_3rtil")
+
+[node name="Title" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(4.5, -50.25)
+scale = Vector2(0.8125, 0.75)
+texture = ExtResource("3_uwuv0")
+
+[node name="Title" type="Label" parent="cardImg/Title"]
+texture_filter = 3
+clip_contents = true
+custom_minimum_size = Vector2(20, 20)
+layout_direction = 2
+offset_left = -48.9231
+offset_top = -11.8333
+offset_right = 51.0769
+offset_bottom = 8.16667
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_mx0y7")
+text = "Ice Knife"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+metadata/_edit_use_anchors_ = true
+
+[node name="Barra" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 3
+position = Vector2(0.249998, 42.5)
+scale = Vector2(0.890625, 1.13793)
+texture = ExtResource("5_nkqxl")
+
+[node name="Rarity" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(29, -39)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_x0a62")
+
+[node name="Sprite2D" type="Sprite2D" parent="cardImg/Rarity"]
+position = Vector2(-18.3333, 0)
+texture = ExtResource("7_x0a62")
+
+[node name="Description" type="Label" parent="cardImg"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.00390625
+anchor_right = 0.005
+anchor_bottom = 0.00390625
+offset_left = -41.5
+offset_top = 23.5
+offset_right = 78.5
+offset_bottom = 76.5
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.866667, 0.929412, 0.913725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_mx0y7")
+theme_override_font_sizes/font_size = 14
+text = "Ice spear that deals 2 damage and stuns for one turn"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+metadata/_edit_use_anchors_ = true
+
+[node name="Point" type="Sprite2D" parent="cardImg"]
+modulate = Color(0.984314, 0.423529, 0.929412, 1)
+texture_filter = 1
+position = Vector2(-36.5, -50.5)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_1xdpo")
+
+[node name="IconCard" type="Sprite2D" parent="cardImg"]
+texture_filter = 1
+position = Vector2(-37, -52)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_krgja")
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(105, 132.25)
+scale = Vector2(2.11, 2.03462)
+texture = ExtResource("8_50qwn")
+
+[node name="CardAnim" parent="." instance=ExtResource("9_csey1")]
+z_index = 10
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+position = Vector2(8, 4)
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 184, 0, 184, 2, 186, 2, 186, 4, 188, 4, 188, 6, 190, 6, 190, 10, 192, 10, 192, 244, 190, 244, 190, 246, 188, 246, 188, 248, 186, 248, 186, 250, 184, 250, 184, 252, 182, 252, 182, 254, 0, 254, 0, 252, -2, 252, -2, 250, -4, 250, -4, 248, -6, 248, -6, 246, -8, 246, -8, 6, -6, 6, -6, 4, -4, 4, -4, 2, -2, 2, -2, 0)

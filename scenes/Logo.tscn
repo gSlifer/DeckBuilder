@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://b46hgjoiirsr7"]
+
+[ext_resource type="Script" path="res://scenes/Logo.gd" id="1_owa7e"]
+[ext_resource type="Texture2D" uid="uid://jl3wyay7clc6" path="res://assets/backgrounds/bg1.png" id="2_12vkd"]
+[ext_resource type="Texture2D" uid="uid://blwqgl3eiaehw" path="res://assets/cartas/class/logo.jpg" id="3_glsp6"]
+[ext_resource type="FontFile" uid="uid://s6n3xxjlmirm" path="res://assets/fonts/04B_30__.TTF" id="4_rpekc"]
+[ext_resource type="Texture2D" uid="uid://dckq27ac6vtp3" path="res://assets/cartas/class/evil-goblin--light-color.svg" id="5_4yjly"]
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_owa7e")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(576, 324.5)
+scale = Vector2(1.152, 0.649)
+texture = ExtResource("2_12vkd")
+
+[node name="Escene" type="Node2D" parent="."]
+
+[node name="Goblin Guild" type="Label" parent="Escene"]
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.096
+anchor_right = 1.003
+anchor_bottom = 0.282
+offset_left = 418.0
+offset_top = 84.0
+offset_right = 742.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0, 1, 0.439216, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rpekc")
+theme_override_font_sizes/font_size = 58
+text = "Goblin 
+Guild"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Logo1" type="Sprite2D" parent="Escene"]
+visible = false
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.790787, 0.863966, 1, 1)
+position = Vector2(584, 331)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_4yjly")
+
+[node name="Logo2" type="Sprite2D" parent="Escene"]
+modulate = Color(0, 1, 0.439216, 1)
+position = Vector2(584, 360)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_glsp6")
+
+[node name="StartGameTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
